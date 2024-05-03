@@ -7,7 +7,9 @@ function Projects() {
 
   const [isPopupOpen, setIsPopupOpen] = useState(false);
   const [title, setTitle] = useState();
-  const setValues = (value1, value2) => { setIsPopupOpen(value1); setTitle(value2) };
+  const [btnType, setBtnType] = useState('');
+  const setValuesDetails = (value1, value2, value3) => { setIsPopupOpen(value1); setTitle(value2); setBtnType(value3) };
+  const setValuesPreview = (value1, value2) => { setIsPopupOpen(value1); setBtnType(value2) };
   const closeModel = () => { setIsPopupOpen(false) };
 
   const projects = [
@@ -25,7 +27,7 @@ function Projects() {
     },
   ]
   return (
-    <div name='projects' className='w-full h-screen z-10 text-[#ccd6f6] bg-[#0a192f]'>
+    <div name='projects' className='w-full h-screen text-[#ccd6f6] bg-[#0a192f]'>
       {/* Content */}
       <div className='max-w-[1000px] mx-auto flex flex-col justify-center w-full h-full'>
           <div className='text-left ml-2 mt-8'>
@@ -45,15 +47,16 @@ function Projects() {
                   </div>
                   <div className='flex justify-center items-center py-4'>
                     <button
-                      onClick={() => setValues(true, project.thumbnaiText)}
+                      onClick={() => setValuesDetails(true, project.thumbnaiText, 'Details')}
                       className='text-gray-300 border-2 border-pink-600 cursor-pointer mx-4 py-3 px-7 my-2 hover:bg-pink-600 rounded-full duration-300'>
                       Details
                     </button>
-                    <a
+                    <button
                       className='text-gray-300 border-2 border-pink-600 cursor-pointer mx-4 py-3 px-7 my-2 hover:bg-pink-600 rounded-full duration-300'
-                      href='https://sibtedev72.github.io/Netflix-Front-End-Clone/' target='_blank'>
+                      onClick={() => setValuesPreview(true, 'Preview')}
+                    >
                       Preview
-                    </a>
+                    </button>
                   </div>
                 </div>
               ))
@@ -62,7 +65,7 @@ function Projects() {
       </div>
       {/* Detail Model Content */}
       <div>
-        { isPopupOpen && <DetailModel closeModel={closeModel} name={title} />}
+        { isPopupOpen && <DetailModel closeModel={closeModel} name={title} buttonType={btnType} />}
       </div>
     </div>
   )
