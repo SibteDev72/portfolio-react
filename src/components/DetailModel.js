@@ -97,12 +97,12 @@ function DetailModel({ closeModel, name, buttonType }) {
       <div 
       className={name==='Netflix Clone' && buttonType==='Details' ? 'flex flex-col justify-center items-start mx-4 pt-[26rem] sm:pt-16 max-w-[1200px] w-full h-full' : 'hidden'}>
         <h1 className='text-2xl font-bold inline border-b-4 border-pink-600 sm:text-3xl sm:pt-[-6rem]'>Features</h1>
-        <ul className='flex flex-col items-start my-4'>
-          <li className='text-lg py-1'>Fully Functioning Feature Page.</li>
-          <li className='text-lg py-1'>Multi ReactJS Components.</li>
-          <li className='text-lg py-1'>Customizable Sliders.</li>
+        <ul className='flex flex-col list-disc my-4 mx-4'>
+          <li className='text-md text-left sm:text-lg py-[0.2rem]'>Fully Functioning Feature Page.</li>
+          <li className='text-md text-left sm:text-lg py-[0.2rem]'>Multi ReactJS Components.</li>
+          <li className='text-md text-left sm:text-lg py-[0.2rem]'>Customizable Sliders.</li>
         </ul>
-        <h1 className='text-3xl font-bold inline border-b-4 border-pink-600'>Technologies</h1>
+        <h1 className='text-3xl font-bold inline border-b-4 mt-4 border-pink-600'>Technologies</h1>
         <div className='w-[18rem] sm:w-[70rem] grid grid-cols-1 sm:grid-cols-3 gap-4 text-center py-4 px-4'>
               {
                 technologies.filter( 
@@ -117,18 +117,18 @@ function DetailModel({ closeModel, name, buttonType }) {
         </div>
       </div>
       <div
-      className={name=='BinYousaf Clone' && buttonType=='Details' ? 'flex flex-col justify-center items-start mx-4 pt-[5rem] sm:pt-0 w-fit h-fit' : 'hidden'}>
+      className={name=='BinYousaf Clone' && buttonType=='Details' ? 'flex flex-col justify-center items-start mx-4 pt-[6rem] sm:pt-10 w-fit h-fit' : 'hidden'}>
         <h1 className='text-2xl pt-[0rem] sm:pt-[4rem] font-bold inline border-b-4 border-pink-600'>Features</h1>
-        <ul className='flex flex-col items-start my-4'>
-          <li className='text-lg py-1'>// Complete E-Commerce Website</li>
-          <li className='text-lg py-1'>// Products controlled through.</li>
-          <li className='text-lg py-1'>// Development of Restful.</li>
-          <li className='text-lg py-1'>// Graphical Representation.</li>
-          <li className='text-lg py-1'>// Implementing SASS.</li>
-          <li className='text-lg py-1'>// Implement Authentication.</li>
+        <ul className='flex flex-col list-disc my-4 mx-4'>
+          <li className='text-md text-left sm:text-lg py-[0.2rem]'>Complete E-Commerce Website with all Functionalities.</li>
+          <li className='text-md text-left sm:text-lg py-[0.2rem]'>Products controlled through an Admin Panel Dashboard.</li>
+          <li className='text-md text-left sm:text-lg py-[0.2rem]'>Development of Restful Api’s and Integration with of front end and back end.</li>
+          <li className='text-md text-left sm:text-lg py-[0.2rem]'>Graphical Representation of Weekly Sales in Admin Dashboard.</li>
+          <li className='text-md text-left sm:text-lg py-[0.2rem]'>Implementing SASS the projects with highly responsive UI.</li>
+          <li className='text-md text-left sm:text-lg py-[0.2rem]'>Implement Authentication in order to secure the data receives from server.</li>
         </ul>
         <h1 className='text-3xl font-bold inline border-b-4 mt-4 border-pink-600'>Technologies</h1>
-        <div className='w-[22rem] sm:w-[70rem] grid grid-cols-1 sm:grid-cols-3 gap-4 text-center py-4 px-4'>
+        <div className='w-[18rem] sm:w-[70rem] grid grid-cols-1 sm:grid-cols-3 gap-4 text-center py-4 px-4'>
               {
                 technologies.map(tech => (
                   <div key={tech.id} className='shadow-md shadow-pink-600 hover:scale-105 hover:shadow-[#8892b0] duration-500 py-2 rounded-lg'>
