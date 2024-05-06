@@ -7,9 +7,9 @@ function Projects() {
 
   const [isPopupOpen, setIsPopupOpen] = useState(false);
   const [title, setTitle] = useState();
-  const [btnType, setBtnType] = useState('');
+  const [btnType, setBtnType] = useState();
   const setValuesDetails = (value1, value2, value3) => { setIsPopupOpen(value1); setTitle(value2); setBtnType(value3) };
-  const setValuesPreview = (value1, value2) => { setIsPopupOpen(value1); setBtnType(value2) };
+  const setValuesPreview = (value1, value2, value3) => { setIsPopupOpen(value1); setTitle(value2); setBtnType(value3) };
   const closeModel = () => { setIsPopupOpen(false) };
 
   // const handleDetails = (item) => {
@@ -62,7 +62,7 @@ function Projects() {
                     </button>
                     <button
                       className='text-gray-300 border-2 border-pink-600 cursor-pointer mx-4 py-3 px-7 my-2 hover:bg-pink-600 rounded-full duration-300'
-                      onClick={() => setValuesPreview(true, 'Preview')}
+                      onClick={() => setValuesPreview(true, project.thumbnaiText, 'Preview')}
                     >
                       Preview
                     </button>

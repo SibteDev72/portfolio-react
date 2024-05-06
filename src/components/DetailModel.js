@@ -11,6 +11,7 @@ import SASS from '../assets/sass.png';
 import Exp from '../assets/express.png';
 import Node from '../assets/node.png';
 import MDB from '../assets/mongo.png';
+import Video from '../assets/video.mp4'
 
 function DetailModel({ closeModel, name, buttonType }) {
 
@@ -116,6 +117,11 @@ function DetailModel({ closeModel, name, buttonType }) {
               }
         </div>
       </div>
+      <div 
+      className={name==='Netflix Clone' && buttonType==='Preview' ? 'flex flex-col justify-center items-center sm:max-w-[1200px] w-full h-[35rem]' : 'hidden'}>
+        <h1 className='text-2xl font-bold inline border-b-4 border-pink-600 sm:text-3xl sm:pt-[-6rem]'>Preview</h1>
+        <video className='w-[18rem] mt-4 sm:w-[50rem] sm:mt-4 sm:rounded-md sm:shadow-md sm:shadow-pink-600' src = {Video} controls autoPlay muted loop />
+      </div>
       <div
       className={name=='BinYousaf Clone' && buttonType=='Details' ? 'flex flex-col justify-center items-start mx-4 pt-[6rem] sm:pt-10 w-fit h-fit' : 'hidden'}>
         <h1 className='text-2xl pt-[0rem] sm:pt-[4rem] font-bold inline border-b-4 border-pink-600'>Features</h1>
@@ -138,6 +144,11 @@ function DetailModel({ closeModel, name, buttonType }) {
                 ))
               }
         </div>
+      </div>
+      <div 
+      className={name==='BinYousaf Clone' && buttonType==='Preview' ? 'flex flex-col justify-center items-center sm:max-w-[1200px] w-full h-[35rem]' : 'hidden'}>
+        <h1 className='text-2xl font-bold inline border-b-4 border-pink-600 sm:text-3xl sm:pt-[-6rem]'>Preview</h1>
+        <video className='w-[18rem] mt-4 sm:w-[50rem] sm:mt-4 sm:rounded-md sm:shadow-md sm:shadow-pink-600' src = {Video} controls autoPlay muted loop />
       </div>
     </div>
     </>
