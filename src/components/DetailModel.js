@@ -91,11 +91,11 @@ function DetailModel({ closeModel, name, buttonType }) {
     <>
     <div className='bg-opacity-50 fixed top-0 left-0 right-0 bottom-0 bg-neutral-950 w-full h-screen z-10'></div>
     <div 
-    className='fixed top-[5rem] left-6 sm:left-[3rem] sm:w-[74rem] sm:h-[34rem] sm:top-[1.5rem]  bg-[#0a192f] text-[#ccd6f6] text-center w-[20rem] h-[42rem] overflow-y-scroll overflow-x-hidden shadow-md shadow-pink-600 rounded-lg z-20'>
+    className='fixed top-[1.5rem] left-[1.75rem] sm:left-[3rem] sm:w-[74rem] sm:h-[34rem] sm:top-[1.5rem]  bg-[#0a192f] text-[#ccd6f6] text-center w-[20rem] h-[40rem] overflow-y-scroll overflow-x-hidden shadow-md shadow-pink-600 rounded-lg z-20'>
       <IoMdClose onClick={closeModel} 
       className='absolute top-10 right-5 text-2xl cursor-pointer hover:rotate-90 transition duration-300' />
       <div 
-      className={name==='Netflix Clone' && buttonType==='Details' ? 'flex flex-col justify-center items-start mx-4 pt-[25rem] sm:pt-16 max-w-[1200px] w-full h-full' : 'hidden'}>
+      className={name==='Netflix Clone' && buttonType==='Details' ? 'flex flex-col justify-center items-start mx-4 pt-[26rem] sm:pt-16 max-w-[1200px] w-full h-full' : 'hidden'}>
         <h1 className='text-2xl font-bold inline border-b-4 border-pink-600 sm:text-3xl sm:pt-[-6rem]'>Features</h1>
         <ul className='flex flex-col items-start my-4'>
           <li className='text-lg py-1'>Fully Functioning Feature Page.</li>
