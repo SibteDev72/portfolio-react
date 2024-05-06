@@ -89,20 +89,21 @@ function DetailModel({ closeModel, name, buttonType }) {
 
   return (
     <>
-    <div className='bg-transparent bg-opacity-50 fixed top-0 left-0 right-0 bottom-0 bg-neutral-950 w-full h-screen z-10'></div>
-    <div className='fixed top-6 left-20 bg-[#0a192f] text-[#ccd6f6] text-center w-[70rem] h-[34rem] shadow-md shadow-pink-600 rounded-lg z-20'>
+    <div className='bg-opacity-50 fixed top-0 left-0 right-0 bottom-0 bg-neutral-950 w-full h-screen z-10'></div>
+    <div 
+    className='fixed top-[5rem] right-6 md:left-[3rem] md:w-[74rem] md:h-[34rem] md:top-[1.5rem]  bg-[#0a192f] text-[#ccd6f6] text-center w-fit h-[50rem] overflow-y-scroll overflow-x-hidden shadow-md shadow-pink-600 rounded-lg z-20'>
       <IoMdClose onClick={closeModel} 
       className='absolute top-10 right-5 text-2xl cursor-pointer hover:rotate-90 transition duration-300' />
       <div 
-      className={name=='Netflix Clone' && buttonType=='Details' ? 'flex flex-col justify-center items-start mx-4 max-w-[1200px] w-full h-full' : 'hidden'}>
-        <h1 className='text-2xl font-bold inline border-b-4 border-pink-600'>Features</h1>
+      className={name=='Netflix Clone' && buttonType=='Details' ? 'flex flex-col justify-center items-start mx-4 pt-[18rem] md:pt-16 max-w-[1200px] w-full h-full' : 'hidden'}>
+        <h1 className='text-2xl font-bold inline border-b-4 border-pink-600 md:text-3xl md:pt-[-6rem]'>Features</h1>
         <ul className='flex flex-col items-start my-4'>
           <li className='text-lg py-1'>// Fully Functioning Feature Page.</li>
           <li className='text-lg py-1'>// Multi ReactJS Components</li>
           <li className='text-lg py-1'>// Customizable Sliders.</li>
         </ul>
         <h1 className='text-3xl font-bold inline border-b-4 border-pink-600'>Technologies</h1>
-        <div className='w-[65rem] grid grid-cols-2 sm:grid-cols-3 gap-4 text-center py-4 px-4'>
+        <div className='w-[22rem] md:w-[70rem] grid grid-cols-1 sm:grid-cols-3 gap-4 text-center py-4 px-4'>
               {
                 technologies.filter( 
                   fil => fil.name != 'React Bootstrap' && fil.name != 'Tailwind' && fil.name != 'SASS' && fil.name != 'Express'
@@ -116,18 +117,18 @@ function DetailModel({ closeModel, name, buttonType }) {
         </div>
       </div>
       <div
-      className={name=='BinYousaf Clone' && buttonType=='Details' ? 'flex flex-col justify-center items-start mx-4 max-w-[1200px] w-full h-full overflow-y-scroll' : 'hidden'}>
-        <h1 className='text-2xl pt-[25rem] font-bold inline border-b-4 border-pink-600'>Features</h1>
+      className={name=='BinYousaf Clone' && buttonType=='Details' ? 'flex flex-col justify-center items-start mx-4 pt-[5rem] md:pt-0 w-fit h-fit' : 'hidden'}>
+        <h1 className='text-2xl pt-[0rem] md:pt-[4rem] font-bold inline border-b-4 border-pink-600'>Features</h1>
         <ul className='flex flex-col items-start my-4'>
-          <li className='text-lg py-1'>// Complete E-Commerce Website with all Functionalities.</li>
-          <li className='text-lg py-1'>// Products controlled through an Admin Panel Dashboard.</li>
-          <li className='text-lg py-1'>// Development of Restful Api’s and Integration with of front end and back end.</li>
-          <li className='text-lg py-1'>// Graphical Representation of Weekly Sales in Admin Dashboard.</li>
-          <li className='text-lg py-1'>// Implementing SASS the projects with highly responsive user interface.</li>
-          <li className='text-lg py-1'>// Implement Authentication in order to secure the data receives from server.</li>
+          <li className='text-lg py-1'>// Complete E-Commerce Website</li>
+          <li className='text-lg py-1'>// Products controlled through.</li>
+          <li className='text-lg py-1'>// Development of Restful.</li>
+          <li className='text-lg py-1'>// Graphical Representation.</li>
+          <li className='text-lg py-1'>// Implementing SASS.</li>
+          <li className='text-lg py-1'>// Implement Authentication.</li>
         </ul>
         <h1 className='text-3xl font-bold inline border-b-4 mt-4 border-pink-600'>Technologies</h1>
-        <div className='w-[65rem] grid grid-cols-2 sm:grid-cols-3 gap-4 text-center py-4 px-4'>
+        <div className='w-[22rem] md:w-[70rem] grid grid-cols-1 sm:grid-cols-3 gap-4 text-center py-4 px-4'>
               {
                 technologies.map(tech => (
                   <div key={tech.id} className='shadow-md shadow-pink-600 hover:scale-105 hover:shadow-[#8892b0] duration-500 py-2 rounded-lg'>
