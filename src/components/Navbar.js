@@ -85,7 +85,7 @@ function Navbar() {
     ]
 
   return (
-    <div className='fixed w-full h-[90px] flex justify-between items-center px-4 bg-[#0a192f] text-gray-300'>
+    <div className='fixed w-full h-[90px] flex justify-between items-center px-4 bg-[#0a192f] text-gray-300 shadow-md shadow-pink-600'>
         <div className='flex justify-between items-center w-[200px]'>
             <h1 className='text-2xl sm:text-4xl font-signature font-bold text-pink-600 cursor-pointer'>
                 <Link to="home" smooth={true} duration={500}>SM</Link>
