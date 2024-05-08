@@ -90,7 +90,8 @@ function DetailModel({ closeModel, name, buttonType }) {
 
   return (
     <>
-    <div className='bg-opacity-50 fixed top-0 left-0 right-0 bottom-0 bg-neutral-950 w-full h-screen z-10'></div>
+    <div 
+    className='bg-opacity-50 fixed top-0 left-0 right-0 bottom-0 bg-neutral-950 w-full h-screen z-10'></div>
     <div 
     className='fixed top-[1.5rem] left-[1.75rem] sm:left-[3rem] sm:w-[74rem] sm:h-[34rem] sm:top-[1.5rem]  bg-[#0a192f] text-[#ccd6f6] text-center w-[20rem] h-[40rem] overflow-y-scroll overflow-x-hidden shadow-md shadow-pink-600 rounded-lg z-20'>
       <IoMdClose onClick={closeModel} 

@@ -1,11 +1,12 @@
 import React from 'react'
+import { Link } from 'react-scroll';
 import { Typewriter } from 'react-simple-typewriter'
 import { HiArrowNarrowRight } from "react-icons/hi";
 
 function Home() {
   return (
  
-    <div name='home' className='w-full h-screen bg-[#0a192f]'>
+    <div id='home' className='w-full h-screen bg-[#0a192f]'>
       {/* Content Container */}
       <div className='flex flex-col justify-center mx-4 max-w-[1000px] h-full sm:ml-[160px] pt-16'>
           <p className='text-1xl sm:text-2xl text-pink-600'>Hi, My name is</p>
@@ -30,14 +31,14 @@ function Home() {
           Write clean, efficient, and maintainable code following best practices and coding standards.
           Good understanding of code versioning tools, such as Git.
         </p>
-        <div>
+        <Link to="about" smooth={true} duration={500}>
           <button className='text-white group border-2 py-3 px-6 flex items-center my-2 hover:bg-pink-600 hover:border-pink-600 hover:rounded-sm'>
             About Me
             <span className='group-hover:rotate-90 duration-300'>
               <HiArrowNarrowRight className='ml-3' />
             </span> 
           </button>
-        </div>
+        </Link>
       </div>
     </div>
   )
