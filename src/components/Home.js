@@ -26,10 +26,11 @@ function Home() {
           </span>
         </h1>
         {/* <h2 className='text-3xl sm:text-6xl text-[#8892b0] font-bold'>I'm a Full Stack Developer.</h2> */}
-        <p className='text-[#8892b0] max-w-[700px] py-4'>I can develop and implement user interfaces using React.js.Design
-          and develop backend services using Node.js knowledge in JavaScript, HTML, CSS, and related front-end technologies
-          Write clean, efficient, and maintainable code following best practices and coding standards.
-          Good understanding of code versioning tools, such as Git.
+        <p className='text-[#ccd6f6] max-w-[700px] py-4'>
+        Aspiring full stack MERN (MongoDB, Express.js, React.js, Node.js) developer with a passion for creating 
+        dynamic and interactive web applications. Proficient in utilizing the MERN stack to develop both front-end 
+        and back-end components of web applications. Eager to further enhance skills and contribute to innovative projects 
+        in the field of web development.
         </p>
         <Link to="about" smooth={true} duration={500}>
           <button className='text-white group border-2 py-3 px-6 flex items-center my-2 hover:bg-pink-600 hover:border-pink-600 hover:rounded-sm'>

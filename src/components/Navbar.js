@@ -43,44 +43,36 @@ function Navbar() {
     const socialMediaLinks = [
         {
             id: 1,
-            icons: (
-                <>
-                    LinkedIn <FaLinkedin size={30} /> 
-                </>
-            ),
+            icons: <FaLinkedin size={30} />,
+            name: 'LinkedIn',
             href: 'https://www.linkedin.com/in/sibte-muhammad-48391727b',
-            style: 'bg-blue-600 rounded-tr-md'
+            style1: 'bg-blue-600 rounded-tr-md',
+            style2: 'bg-blue-600 rounded-tl-md rounded-tr-md'
         },
         {
             id: 2,
-            icons: (
-                <>
-                    GitHub <FaGithubSquare size={30} />
-                </>
-            ),
+            icons: <FaGithubSquare size={30} />,
+            name: 'GitHub',
             href: 'https://github.com/SibteDev72',
-            style: 'bg-[#131313]'
+            style1: 'bg-[#131313]',
+            style2: 'bg-[#131313] rounded-tl-md rounded-tr-md'
         },
         {
             id: 3,
-            icons: (
-                <>
-                    Mail <IoMdMail size={30} />
-                </>
-            ),
+            icons: <IoMdMail size={30} />,
+            name: 'Mail',
             href: 'mailto:sibte.dev72@gmail.com',
-            style: 'bg-[#6fc2b0]'
+            style1: 'bg-[#6fc2b0]',
+            style2: 'bg-[#6fc2b0] rounded-tl-md rounded-tr-md'
         },
         {
             id: 4,
-            icons: (
-                <>
-                    Resume <BsFillPersonLinesFill size={30} />
-                </>
-            ),
+            icons: <BsFillPersonLinesFill size={30} />,
+            name: 'Resume',
             href: 'Resume.pdf',
-            style: 'bg-[#3f3f3f] rounded-br-md',
-            dowload: true,
+            style1: 'bg-[#3f3f3f] rounded-br-md',
+            style2: 'bg-[#3f3f3f] rounded-tl-md rounded-tr-md',
+            dowload: true
         }
     ]
 
@@ -163,7 +155,26 @@ function Navbar() {
                 {
                     socialMediaLinks.map(links => (
                         <li key={links.id} 
-                        className={'w-[160px] h-[55px] flex justify-between items-center ml-[-105px] hover:ml-[-10px] duration-300' + ' ' + links.style}>
+                        className={'w-[160px] h-[55px] flex justify-between items-center ml-[-105px] hover:ml-[-10px] duration-300' + ' ' + links.style1}>
+                            <a className='flex justify-between items-center w-full text-gray-300' 
+                            href={links.href} 
+                            download={links.dowload} 
+                            target="_blank"
+                            > 
+                                { links.name }{ links.icons }
+                            </a> 
+                        </li>
+                    ))
+                }
+            </ul>
+        </div>
+         {/* Aside Social Media Mobile */}
+        <div className={ !nav ? 'fixed flex justify-center bottom-0 left-0 w-full lg:hidden' : 'hidden'}>
+            <ul className='flex'>
+                {
+                    socialMediaLinks.map(links => (
+                        <li key={links.id} 
+                        className={'w-[55px] h-[55px] flex justify-between items-center mx-1 ' + ' ' + links.style2}>
                             <a className='flex justify-between items-center w-full text-gray-300' 
                             href={links.href} 
                             download={links.dowload} 
