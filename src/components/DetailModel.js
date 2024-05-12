@@ -11,10 +11,8 @@ import SASS from '../assets/sass.png';
 import Exp from '../assets/express.png';
 import Node from '../assets/node.png';
 import MDB from '../assets/mongo.png';
-import NetflixCloneDemo from '../assets/NetflixCloneDemo.mp4'
-import BinYousafDemo from '../assets/BinYousafDemo.mp4'
 
-function DetailModel({ closeModel, name, buttonType }) {
+function DetailModel({closeModel, object}) {
 
   useEffect(() => {
     document.body.style.overflowY = 'hidden';
@@ -93,21 +91,23 @@ function DetailModel({ closeModel, name, buttonType }) {
     <div 
     className='bg-opacity-50 fixed top-0 left-0 right-0 bottom-0 flex justify-center items-center bg-neutral-950 w-full h-screen z-10'>
       <div 
-      className='relative sm:w-[74rem] sm:h-[34rem] bg-[#0a192f] text-[#ccd6f6] text-center w-[20rem] h-[40rem] overflow-y-scroll overflow-x-hidden shadow-md shadow-pink-600 rounded-lg z-20'>
+      className='relative sm:w-[74rem] sm:h-[35rem] sm:overflow-y-scroll bg-[#0a192f] text-[#ccd6f6] text-center w-[20rem] h-[40rem] overflow-y-scroll overflow-x-hidden shadow-md shadow-pink-600 rounded-lg z-20'>
         <IoMdClose onClick={closeModel} 
         className='absolute top-10 right-5 text-2xl cursor-pointer hover:rotate-90 transition duration-300' />
         <div 
-        className={name==='Netflix Clone' && buttonType==='Details' ? 'flex flex-col justify-center items-start mx-4 pt-[26rem] sm:pt-16 max-w-[1200px] w-full h-full' : 'hidden'}>
-          <h1 className='text-2xl font-bold inline border-b-4 border-pink-600 sm:text-3xl sm:pt-[-6rem]'>Features</h1>
+        className='flex flex-col justify-center items-start mx-4 pt-[6rem] sm:pt-2 w-fit h-fit'>
+          <h1 className='text-2xl pt-[0rem] sm:pt-[4rem] font-bold inline border-b-4 border-pink-600'>Features</h1>
           <ul className='flex flex-col list-disc my-4 mx-4'>
-            <li className='text-md text-left sm:text-lg py-[0.2rem]'>Fully Functioning Feature Page.</li>
-            <li className='text-md text-left sm:text-lg py-[0.2rem]'>Multi ReactJS Components.</li>
-            <li className='text-md text-left sm:text-lg py-[0.2rem]'>Customizable Sliders.</li>
+            {
+              object.features.map( (point, index) =>  (
+                <li key={index} className='text-md text-left sm:text-lg py-[0.2rem]'>{point}</li>   
+              ))
+            }
           </ul>
           <h1 className='text-3xl font-bold inline border-b-4 mt-4 border-pink-600'>Technologies</h1>
           <div className='w-[18rem] sm:w-[70rem] grid grid-cols-1 sm:grid-cols-3 gap-4 text-center py-4 px-4'>
-                {
-                  technologies.filter( 
+            { object.thumbnaiText === 'Netflix Clone' ? 
+                technologies.filter(  
                     fil => fil.name !== 'React Bootstrap' && fil.name !== 'Tailwind' && fil.name != 'SASS' && fil.name != 'Express'
                     && fil.name != 'Node' && fil.name != 'MongoDB').map(tech => (
                     <div key={tech.id} className='shadow-md shadow-pink-600 hover:scale-105 hover:shadow-[#8892b0] duration-500 py-2 rounded-lg'>
@@ -115,41 +115,15 @@ function DetailModel({ closeModel, name, buttonType }) {
                       <p className='mt-2'>{tech.name}</p>
                     </div>
                   ))
-                }
+                :
+                technologies.map(tech => (
+                  <div key={tech.id} className='shadow-md shadow-pink-600 hover:scale-105 hover:shadow-[#8892b0] duration-500 py-2 rounded-lg'>
+                    <img src={tech.src} alt='insertImage'  className={'w-12 mx-auto' + ' ' + tech.style}/>
+                    <p className='mt-2'>{tech.name}</p>
+                  </div>
+                ))
+            }
           </div>
-        </div>
-        <div 
-        className={name==='Netflix Clone' && buttonType==='Demo' ? 'flex flex-col justify-center items-center sm:max-w-[1200px] w-full h-[35rem]' : 'hidden'}>
-          <h1 className='text-2xl font-bold inline border-b-4 border-pink-600 sm:text-3xl sm:pt-[-6rem]'>Demo Video</h1>
-          <video className='w-[18rem] mt-4 sm:w-[50rem] sm:mt-4 sm:rounded-md sm:shadow-md sm:shadow-pink-600' src = {NetflixCloneDemo} controls autoPlay muted loop />
-        </div>
-        <div
-        className={name=='BinYousaf Clone' && buttonType=='Details' ? 'flex flex-col justify-center items-start mx-4 pt-[6rem] sm:pt-10 w-fit h-fit' : 'hidden'}>
-          <h1 className='text-2xl pt-[0rem] sm:pt-[4rem] font-bold inline border-b-4 border-pink-600'>Features</h1>
-          <ul className='flex flex-col list-disc my-4 mx-4'>
-            <li className='text-md text-left sm:text-lg py-[0.2rem]'>Complete E-Commerce Website with all Functionalities.</li>
-            <li className='text-md text-left sm:text-lg py-[0.2rem]'>Products controlled through an Admin Panel Dashboard.</li>
-            <li className='text-md text-left sm:text-lg py-[0.2rem]'>Development of Restful Api’s and Integration with of front end and back end.</li>
-            <li className='text-md text-left sm:text-lg py-[0.2rem]'>Graphical Representation of Weekly Sales in Admin Dashboard.</li>
-            <li className='text-md text-left sm:text-lg py-[0.2rem]'>Implementing SASS the projects with highly responsive UI.</li>
-            <li className='text-md text-left sm:text-lg py-[0.2rem]'>Implement Authentication in order to secure the data receives from server.</li>
-          </ul>
-          <h1 className='text-3xl font-bold inline border-b-4 mt-4 border-pink-600'>Technologies</h1>
-          <div className='w-[18rem] sm:w-[70rem] grid grid-cols-1 sm:grid-cols-3 gap-4 text-center py-4 px-4'>
-                {
-                  technologies.map(tech => (
-                    <div key={tech.id} className='shadow-md shadow-pink-600 hover:scale-105 hover:shadow-[#8892b0] duration-500 py-2 rounded-lg'>
-                      <img src={tech.src} alt='insertImage' className={'w-12 mx-auto' + ' ' + tech.style}/>
-                      <p className='mt-2'>{tech.name}</p>
-                    </div>
-                  ))
-                }
-          </div>
-        </div>
-        <div 
-        className={name==='BinYousaf Clone' && buttonType==='Demo' ? 'flex flex-col justify-center items-center sm:max-w-[1200px] w-full h-[35rem]' : 'hidden'}>
-          <h1 className='text-2xl font-bold inline border-b-4 border-pink-600 sm:text-3xl sm:pt-[-6rem]'>Demo Video</h1>
-          <video className='w-[18rem] mt-4 sm:w-[50rem] sm:mt-4 sm:rounded-md sm:shadow-md sm:shadow-pink-600' src = {BinYousafDemo} controls autoPlay muted loop />
         </div>
       </div>
     </div>

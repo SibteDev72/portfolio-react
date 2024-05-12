@@ -1,0 +1,28 @@
+[
+    {
+      "id":1,
+      "thumbnaiText": "Netflix Clone",
+      "src": "images/netflix.png",
+      "style": "w-60",
+      "features": [
+        "Fully Functioning Feature Page.",
+        "Multi ReactJS Components.",
+        "Customizable Sliders."
+      ]
+    },
+    {
+      "id":2,
+      "thumbnaiText": "BinYousaf Clone",
+      "src": "images/netflix.png",
+      "style": "w-60",
+      "features": [
+        "Complete E-Commerce Website with all Functionalities.",
+        "Products controlled through an Admin Panel Dashboard.",
+        "Development of Restful Api’s and Integration with of front end and back end.",
+        "Graphical Representation of Weekly Sales in Admin Dashboard.",
+        "Implementing SASS the projects with highly responsive UI.",
+        "Implement Authentication in order to secure the data receives from server."
+      ]
+    }
+]
+  
