@@ -2,6 +2,8 @@ import React, {useState} from 'react';
 import Data from '../Data/projects.json';
 import DetailModel from './DetailModel';
 import DemoModel from './DemoModel';
+import NetflixImg from '../assets/netflix.png';
+import BYImg from '../assets/binYousaf.png';
 
 function Projects() {
 
@@ -29,7 +31,9 @@ function Projects() {
                   className='shadow-md shadow-pink-600 w-[100] h-70 hover:shadow-[#8892b0] duration-500 py-2 rounded-lg'
                 >
                   <div className='h-40 bg-black flex justify-center items-center rounded-md hover:scale-105 duration-300'>
-                    <img src="LOGO.png" className={`${project.style}`} alt={project.thumbnaiText} />
+                    <img 
+                    src={project.thumbnaiText === 'Netflix Clone' ? NetflixImg : '' || project.thumbnaiText === 'BinYousaf Clone' ? BYImg : ''} 
+                    className={project.thumbnaiText === 'Netflix Clone' ? 'w-60' : '' || project.thumbnaiText === 'BinYousaf Clone' ? 'w-36' : ''} />
                     <p className='px-1 text-gray-300 text-2xl font-bold'>{project.thumbnaiText}</p>
                   </div>
                   <div className='flex justify-center items-center py-4'>

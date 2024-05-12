@@ -81,7 +81,7 @@ function DetailModel({closeModel, object}) {
       name: 'Node',
     },
     {
-      id:10,
+      id:12,
       src: MDB,
       name: 'MongoDB',
     },
@@ -108,8 +108,8 @@ function DetailModel({closeModel, object}) {
           <div className='w-[18rem] sm:w-[70rem] grid grid-cols-1 sm:grid-cols-3 gap-4 text-center py-4 px-4'>
             { object.thumbnaiText === 'Netflix Clone' ? 
                 technologies.filter(  
-                    fil => fil.name !== 'React Bootstrap' && fil.name !== 'Tailwind' && fil.name != 'SASS' && fil.name != 'Express'
-                    && fil.name != 'Node' && fil.name != 'MongoDB').map(tech => (
+                    fil => fil.id !== 5 && fil.id !== 8 && fil.id != 9 && fil.id != 10
+                    && fil.id != 11 && fil.id != 12).map(tech => (
                     <div key={tech.id} className='shadow-md shadow-pink-600 hover:scale-105 hover:shadow-[#8892b0] duration-500 py-2 rounded-lg'>
                       <img src={tech.src} alt='insertImage'  className={'w-12 mx-auto' + ' ' + tech.style}/>
                       <p className='mt-2'>{tech.name}</p>

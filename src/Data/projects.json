@@ -2,8 +2,6 @@
     {
       "id":1,
       "thumbnaiText": "Netflix Clone",
-      "src": "images/netflix.png",
-      "style": "w-60",
       "features": [
         "Fully Functioning Feature Page.",
         "Multi ReactJS Components.",
@@ -13,8 +11,6 @@
     {
       "id":2,
       "thumbnaiText": "BinYousaf Clone",
-      "src": "images/netflix.png",
-      "style": "w-60",
       "features": [
         "Complete E-Commerce Website with all Functionalities.",
         "Products controlled through an Admin Panel Dashboard.",
