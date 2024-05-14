@@ -7,8 +7,7 @@
         "Multi ReactJS Components.",
         "Customizable Sliders."
       ],
-      "Imgsrc": "images/netflix.png",
-      "ImgStyle": "w-[12rem]"
+      "Imgsrc": "assets/netflix.png"
     },
     {
       "id":2,
@@ -21,8 +20,7 @@
         "Implementing SASS the projects with highly responsive UI.",
         "Implement Authentication in order to secure the data receives from server."
       ],
-      "Imgsrc": "images/binYousaf.png",
-      "ImgStyle": "w-[9rem]"
+      "Imgsrc": "assets/binYousaf.png"
     }
 ]
   

@@ -29,7 +29,7 @@ function Projects() {
                   className='shadow-md shadow-pink-600 w-[100] h-70 hover:shadow-[#8892b0] duration-500 py-2 rounded-lg'
                 >
                   <div className='h-40 bg-black flex justify-center items-center rounded-md hover:scale-105 duration-300'>
-                    <img src={project.Imgsrc} className={'' + project.ImgStyle} />
+                    <img src={project.Imgsrc} className='w-[8rem]' alt={project.thumbnaiText} />
                     <p className='px-1 text-gray-300 text-2xl font-bold'>{project.thumbnaiText}</p>
                   </div>
                   <div className='flex justify-center items-center py-4'>
