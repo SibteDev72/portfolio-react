@@ -91,7 +91,8 @@ function DetailModel({closeModel, object}) {
     <div 
     className='bg-opacity-50 fixed top-0 left-0 right-0 bottom-0 flex justify-center items-center bg-neutral-950 w-full h-screen z-10'>
       <div 
-      className='relative sm:w-[74rem] sm:h-[35rem] sm:overflow-y-scroll bg-[#0a192f] text-[#ccd6f6] text-center w-[20rem] h-[40rem] overflow-y-scroll overflow-x-hidden shadow-md shadow-pink-600 rounded-lg z-20'>
+      className='relative sm:w-[74rem] sm:h-[35rem] sm:overflow-y-scroll bg-[#0a192f] text-[#ccd6f6] text-center w-[20rem] h-[40rem]
+      overflow-y-scroll overflow-x-hidden shadow-md shadow-pink-600 rounded-lg animate-[popIn_0.2s_ease-in-out] z-20'>
         <IoMdClose onClick={closeModel} 
         className='absolute top-10 right-5 text-2xl cursor-pointer hover:rotate-90 transition duration-300' />
         <div 
