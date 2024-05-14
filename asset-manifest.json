@@ -1,15 +1,13 @@
 {
   "files": {
-    "main.css": "/portfolio-react/static/css/main.825714cb.css",
-    "main.js": "/portfolio-react/static/js/main.d9dc3106.js",
+    "main.css": "/portfolio-react/static/css/main.01388897.css",
+    "main.js": "/portfolio-react/static/js/main.6a1cd426.js",
     "static/media/NetflixCloneDemo.mp4": "/portfolio-react/static/media/NetflixCloneDemo.4596adb40d1359048920.mp4",
     "static/media/BinYousafDemo.mp4": "/portfolio-react/static/media/BinYousafDemo.1ee9d6110437bfe05da0.mp4",
     "static/media/react.png": "/portfolio-react/static/media/react.0cf951a69d8e58f83f9d.png",
-    "static/media/binYousaf.png": "/portfolio-react/static/media/binYousaf.6dd5b7ed82c34cfeb7e5.png",
     "static/media/node.png": "/portfolio-react/static/media/node.952a9ea986dcfa5229ad.png",
     "static/media/mongo.png": "/portfolio-react/static/media/mongo.2a1528ddc31d4ce8518d.png",
     "static/media/express.png": "/portfolio-react/static/media/express.04e4743fbd704db71ed7.png",
-    "static/media/netflix.png": "/portfolio-react/static/media/netflix.f2a7cd7d5937ee50bcf8.png",
     "static/media/github.png": "/portfolio-react/static/media/github.3b9e32903aa89111875d.png",
     "static/media/html.png": "/portfolio-react/static/media/html.2ba4fabc69a89a8f71e6.png",
     "static/media/styled-components.png": "/portfolio-react/static/media/styled-components.1316c8f2e3c1a83bb661.png",
@@ -18,11 +16,11 @@
     "static/media/css.png": "/portfolio-react/static/media/css.69a82c2d9e45c933a9cb.png",
     "static/media/javascript.png": "/portfolio-react/static/media/javascript.1ccd6ef9bb1f9c84ef00.png",
     "index.html": "/portfolio-react/index.html",
-    "main.825714cb.css.map": "/portfolio-react/static/css/main.825714cb.css.map",
-    "main.d9dc3106.js.map": "/portfolio-react/static/js/main.d9dc3106.js.map"
+    "main.01388897.css.map": "/portfolio-react/static/css/main.01388897.css.map",
+    "main.6a1cd426.js.map": "/portfolio-react/static/js/main.6a1cd426.js.map"
   },
   "entrypoints": [
-    "static/css/main.825714cb.css",
-    "static/js/main.d9dc3106.js"
+    "static/css/main.01388897.css",
+    "static/js/main.6a1cd426.js"
   ]
 }
