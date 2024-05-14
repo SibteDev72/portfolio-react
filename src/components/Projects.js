@@ -2,8 +2,6 @@ import React, {useState} from 'react';
 import Data from '../Data/projects.json';
 import DetailModel from './DetailModel';
 import DemoModel from './DemoModel';
-import NetflixImg from '../assets/netflix.png';
-import BYImg from '../assets/binYousaf.png';
 
 function Projects() {
 
@@ -32,8 +30,8 @@ function Projects() {
                 >
                   <div className='h-40 bg-black flex justify-center items-center rounded-md hover:scale-105 duration-300'>
                     <img 
-                    src={project.thumbnaiText === 'Netflix Clone' ? NetflixImg : '' || project.thumbnaiText === 'BinYousaf Clone' ? BYImg : ''} 
-                    className={project.thumbnaiText === 'Netflix Clone' ? 'w-60' : '' || project.thumbnaiText === 'BinYousaf Clone' ? 'w-36' : ''} />
+                    src={project.Imgsrc} 
+                    className={`${project.ImgStyle}`} />
                     <p className='px-1 text-gray-300 text-2xl font-bold'>{project.thumbnaiText}</p>
                   </div>
                   <div className='flex justify-center items-center py-4'>

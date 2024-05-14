@@ -6,7 +6,9 @@
         "Fully Functioning Feature Page.",
         "Multi ReactJS Components.",
         "Customizable Sliders."
-      ]
+      ],
+      "Imgsrc": "images/netflix.png",
+      "ImgStyle": "w-60"
     },
     {
       "id":2,
@@ -18,7 +20,9 @@
         "Graphical Representation of Weekly Sales in Admin Dashboard.",
         "Implementing SASS the projects with highly responsive UI.",
         "Implement Authentication in order to secure the data receives from server."
-      ]
+      ],
+      "Imgsrc": "images/binYousaf.png",
+      "ImgStyle": "w-36"
     }
 ]
   
