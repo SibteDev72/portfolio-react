@@ -8,7 +8,7 @@
         "Customizable Sliders."
       ],
       "Imgsrc": "images/netflix.png",
-      "ImgStyle": "'w-[15rem]'"
+      "ImgStyle": "w-[12rem]"
     },
     {
       "id":2,
@@ -22,7 +22,7 @@
         "Implement Authentication in order to secure the data receives from server."
       ],
       "Imgsrc": "images/binYousaf.png",
-      "ImgStyle": "'w-[9rem]'"
+      "ImgStyle": "w-[9rem]"
     }
 ]
   
