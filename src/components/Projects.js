@@ -5,13 +5,16 @@ import DemoModel from './DemoModel';
 
 function Projects() {
 
-  const [isPopupOpen, setIsPopupOpen] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const [buttonType, setButtonType] = useState('');
   const [projectObject, setProjectObject] = useState([]);
 
-  const setValuesDetails = (value1, value2, value3 ) => { setIsPopupOpen(value1); setProjectObject(value2); setButtonType(value3); };
-  const setValuesDemo = (value1, value2, value3 ) => { setIsPopupOpen(value1); setProjectObject(value2); setButtonType(value3); };
-  const closeModel = () => { setIsPopupOpen(false) };
+  const setValuesDetails = (value1, value2, value3 ) => { setIsModalOpen(value1); setProjectObject(value2); setButtonType(value3); };
+  const setValuesDemo = (value1, value2, value3 ) => { setIsModalOpen(value1); setProjectObject(value2); setButtonType(value3); };
+  
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
 
   return (
     <div id='projects' className='w-full h-screen text-[#ccd6f6] bg-[#0a192f]'>
@@ -52,8 +55,8 @@ function Projects() {
       </div>
       {/* Model Content */}
       <div>
-        { isPopupOpen && buttonType === 'Details' && <DetailModel closeModel={closeModel} object={projectObject} />}
-        { isPopupOpen && buttonType === 'Demo' && <DemoModel closeModel={closeModel} object={projectObject} />}
+        { isModalOpen && buttonType === 'Details' && <DetailModel onClose={closeModal} object={projectObject} />}
+        { isModalOpen && buttonType === 'Demo' && <DemoModel onClose={closeModal} object={projectObject} />}
       </div>
     </div>
   )
