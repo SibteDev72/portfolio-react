@@ -12,10 +12,10 @@ function Home() {
           <p className='text-1xl sm:text-2xl text-pink-600'>Hi, My name is</p>
           <h1 className='text-2xl sm:text-6xl text-[#ccd6f6] font-bold'>Syed Sibte Muhammad</h1>
         <h1 className='text-2xl sm:text-6xl font-bold text-pink-600'>
-          I'm a {' '}
+          Jazib {' '}
           <span className='text-2xl sm:text-6xl font-bold text-[#8892b0]'>
             <Typewriter
-              words={['Full Stack Developer.']}
+              words={['Yacka Hai', 'Bondo Hai', 'Hanu Hai']}
               loop={true}
               cursor
               cursorStyle=''
