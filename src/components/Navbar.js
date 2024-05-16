@@ -69,7 +69,7 @@ function Navbar() {
             id: 4,
             icons: <BsFillPersonLinesFill size={30} />,
             name: 'Resume',
-            href: 'Resume.pdf',
+            href: 'Syed-Sibte-Muhammad-Resume.pdf',
             style1: 'bg-[#3f3f3f] rounded-br-md',
             style2: 'bg-[#3f3f3f] rounded-tl-md rounded-tr-md',
             dowload: true
