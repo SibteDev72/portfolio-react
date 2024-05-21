@@ -11,11 +11,17 @@ import SASS from '../assets/sass.png';
 import Exp from '../assets/express.png';
 import Node from '../assets/node.png';
 import MDB from '../assets/mongo.png';
+import { useStore } from '../Store/functions-store';
 
-function DetailModel({onClose, object}) {
+function DetailModel() {
 
   const [isAnimating, setIsAnimating] = useState(true);
 
+  const { object, closeModel } = useStore((state) => ({
+    object: state.projectObject,
+    closeModel: state.closeModel
+  }))
+  
   useEffect(() => {
     document.body.style.overflowY = 'hidden';
     return() => {
@@ -26,7 +32,7 @@ function DetailModel({onClose, object}) {
   const handleClose = () => {
     setIsAnimating(false);
     setTimeout(() => {
-      onClose();
+      closeModel();
     }, 300);
   };
 
@@ -110,15 +116,15 @@ function DetailModel({onClose, object}) {
           <h1 className='text-2xl pt-[0rem] sm:pt-[4rem] font-bold inline border-b-4 border-pink-600'>Features</h1>
           <ul className='flex flex-col list-disc my-4 mx-4'>
             {
-              object.features.map( (point, index) =>  (
+              object.project.features.map( (point, index) =>  (
                 <li key={index} className='text-md text-left sm:text-lg py-[0.2rem]'>{point}</li>   
               ))
             }
           </ul>
           <h1 className='text-3xl font-bold inline border-b-4 mt-4 border-pink-600'>Technologies</h1>
           <div className='w-[18rem] sm:w-[70rem] grid grid-cols-1 sm:grid-cols-3 gap-4 text-center py-4 px-4'>
-            { object.thumbnaiText === 'Netflix Clone' ? 
-                technologies.filter(  
+            { object.project.thumbnaiText === 'Netflix Clone' ? 
+                technologies.filter(
                     fil => fil.id !== 5 && fil.id !== 8 && fil.id != 9 && fil.id != 10
                     && fil.id != 11 && fil.id != 12).map(tech => (
                     <div key={tech.id} className='shadow-md shadow-pink-600 hover:scale-105 hover:shadow-[#8892b0] duration-500 py-2 rounded-lg'>

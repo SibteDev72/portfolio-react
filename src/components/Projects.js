@@ -1,20 +1,16 @@
-import React, {useState} from 'react';
+import React from 'react';
 import Data from '../Data/projects.json';
 import DetailModel from './DetailModel';
 import DemoModel from './DemoModel';
+import { useStore } from '../Store/functions-store';
 
 function Projects() {
 
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [buttonType, setButtonType] = useState('');
-  const [projectObject, setProjectObject] = useState([]);
-
-  const setValuesDetails = (value1, value2, value3 ) => { setIsModalOpen(value1); setProjectObject(value2); setButtonType(value3); };
-  const setValuesDemo = (value1, value2, value3 ) => { setIsModalOpen(value1); setProjectObject(value2); setButtonType(value3); };
-  
-  const closeModal = () => {
-    setIsModalOpen(false);
-  };
+  const { openModel, boolValue, btnValue } = useStore((state) => ({
+    openModel: state.openModel,
+    boolValue: state.isModelOpen,
+    btnValue: state.btnType
+  }))
 
   return (
     <div id='projects' className='w-full h-screen text-[#ccd6f6] bg-[#0a192f]'>
@@ -37,13 +33,13 @@ function Projects() {
                   </div>
                   <div className='flex justify-center items-center py-4'>
                     <button
-                      onClick={() => setValuesDetails(true, project, 'Details')}
+                      onClick={() => openModel(project, 'Details')}
                       className='text-gray-300 border-2 border-pink-600 cursor-pointer mx-4 py-3 px-7 my-2 hover:bg-pink-600 rounded-full duration-300'>
                       Details
                     </button>
                     <button
                       className='text-gray-300 border-2 border-pink-600 cursor-pointer mx-4 py-3 px-7 my-2 hover:bg-pink-600 rounded-full duration-300'
-                      onClick={() => setValuesDemo(true, project, 'Demo')}
+                      onClick={() => openModel(project, 'Demo')}
                     >
                       Demo
                     </button>
@@ -55,8 +51,8 @@ function Projects() {
       </div>
       {/* Model Content */}
       <div>
-        { isModalOpen && buttonType === 'Details' && <DetailModel onClose={closeModal} object={projectObject} />}
-        { isModalOpen && buttonType === 'Demo' && <DemoModel onClose={closeModal} object={projectObject} />}
+        { boolValue && btnValue === 'Details' && <DetailModel />}
+        { boolValue && btnValue === 'Demo' && <DemoModel />}
       </div>
     </div>
   )

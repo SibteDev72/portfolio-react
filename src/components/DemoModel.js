@@ -2,11 +2,17 @@ import React, {useEffect, useState} from 'react';
 import { IoMdClose } from "react-icons/io";
 import NetflixCloneDemo from '../assets/NetflixCloneDemo.mp4';
 import BinYousafDemo from '../assets/BinYousafDemo.mp4';
+import { useStore } from '../Store/functions-store';
 
-function DemoModel({onClose, object}) {
+function DemoModel() {
 
   const [isAnimating, setIsAnimating] = useState(true);
 
+  const { object, closeModel } = useStore((state) => ({
+    object: state.projectObject,
+    closeModel: state.closeModel
+  }))
+  
   useEffect(() => {
     document.body.style.overflowY = 'hidden';
     return() => {
@@ -17,7 +23,7 @@ function DemoModel({onClose, object}) {
   const handleClose = () => {
     setIsAnimating(false);
     setTimeout(() => {
-      onClose();
+      closeModel();
     }, 300);
   };
 
@@ -33,7 +39,7 @@ function DemoModel({onClose, object}) {
         <div 
         className='flex flex-col justify-center items-center sm:max-w-[1200px] w-full h-[35rem]'>
           <h1 className='text-2xl font-bold inline border-b-4 border-pink-600 sm:text-3xl sm:pt-[-6rem]'>Demo Video</h1>
-          { object.thumbnaiText === 'Netflix Clone' ? 
+          { object.project.thumbnaiText === 'Netflix Clone' ? 
             <video 
             className='w-[18rem] mt-4 sm:w-[50rem] sm:mt-4 sm:rounded-md sm:shadow-md sm:shadow-pink-600' 
             src = {NetflixCloneDemo} controls autoPlay muted loop />
