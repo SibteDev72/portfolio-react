@@ -12,18 +12,21 @@ import Exp from '../assets/express.png';
 import Node from '../assets/node.png';
 import MDB from '../assets/mongo.png';
 import { useStore } from '../Store/functions-store';
+import { motion, useAnimation } from 'framer-motion';
 
 function DetailModel() {
 
   const [isAnimating, setIsAnimating] = useState(true);
+  const animationController = useAnimation();
 
   const { object, closeModel } = useStore((state) => ({
     object: state.projectObject,
     closeModel: state.closeModel
   }))
-  
+
   useEffect(() => {
     document.body.style.overflowY = 'hidden';
+    animationController.start("visible");
     return() => {
       document.body.style.overflowY = 'scroll';
     } 
@@ -103,45 +106,88 @@ function DetailModel() {
   ]
 
   return (
-    <div 
+    <div
     className='bg-opacity-50 fixed top-0 left-0 right-0 bottom-0 flex justify-center items-center bg-neutral-950 w-full h-screen z-10'>
       <div
-      className={isAnimating == true ? 
+      className={isAnimating === true ? 
       'relative sm:w-[74rem] sm:h-[35rem] sm:overflow-y-scroll bg-[#0a192f] text-[#ccd6f6] text-center w-[20rem] h-[44rem] overflow-y-scroll overflow-x-hidden shadow-md shadow-pink-600 rounded-lg animate-[popIn_0.3s_ease_forwards] z-20' 
       : 'relative sm:w-[74rem] sm:h-[35rem] sm:overflow-y-scroll bg-[#0a192f] text-[#ccd6f6] text-center w-[20rem] h-[44rem] overflow-y-scroll overflow-x-hidden shadow-md shadow-pink-600 rounded-lg animate-[popOut_0.3s_ease_forwards]'}>
         <IoMdClose onClick={handleClose}
         className='absolute top-10 right-5 text-2xl cursor-pointer hover:rotate-90 transition duration-300' />
-        <div 
+        <motion.div
+        variants={{
+          hidden: { opacity: 0,},
+          visible: { opacity: 1,}
+        }}
+        initial="hidden"
+        animate={animationController}
+        transition={{ duration: 1.2, ease:'easeIn' }}
         className='flex flex-col justify-center items-start mx-4 pt-[6rem] sm:pt-2 w-fit h-fit'>
           <h1 className='text-2xl pt-[0rem] sm:pt-[4rem] font-bold inline border-b-4 border-pink-600'>Features</h1>
           <ul className='flex flex-col list-disc my-4 mx-4'>
             {
-              object.project.features.map( (point, index) =>  (
-                <li key={index} className='text-md text-left sm:text-lg py-[0.2rem]'>{point}</li>   
-              ))
+              object.project.features.map( (point, index) =>  {
+                const duration = 0.5 + (index + 1) * 0.1;
+                return(
+                  <motion.li
+                  variants={{
+                    hidden: { opacity: 0, x: -35},
+                    visible: { opacity: 1, x: 0 }
+                  }}
+                  initial="hidden"
+                  animate={animationController}
+                  transition={{ duration, ease:'easeIn' }} 
+                  key={index} className='text-md text-left sm:text-lg py-[0.2rem]'>{point}</motion.li>
+                );   
+              })
             }
           </ul>
           <h1 className='text-3xl font-bold inline border-b-4 mt-4 border-pink-600'>Technologies</h1>
           <div className='w-[18rem] sm:w-[70rem] grid grid-cols-1 sm:grid-cols-3 gap-4 text-center py-4 px-4'>
             { object.project.thumbnaiText === 'Netflix Clone' ? 
                 technologies.filter(
-                    fil => fil.id !== 5 && fil.id !== 8 && fil.id != 9 && fil.id != 10
-                    && fil.id != 11 && fil.id != 12).map(tech => (
-                    <div key={tech.id} className='shadow-md shadow-pink-600 hover:scale-105 hover:shadow-[#8892b0] duration-500 py-2 rounded-lg'>
-                      <img src={tech.src} alt='insertImage'  className={'w-12 mx-auto' + ' ' + tech.style}/>
-                      <p className='mt-2'>{tech.name}</p>
-                    </div>
-                  ))
+                    fil => fil.id !== 5 && fil.id !== 8 && fil.id !== 9 && fil.id !== 10
+                    && fil.id !== 11 && fil.id !== 12).map((tech, index) => {
+                    const duration = 0.5 + (index + 1) * 0.1;
+                    return(
+                      <motion.div
+                      variants={{
+                      hidden: { opacity: 0, x: -35},
+                      visible: { opacity: 1, x: 0 }
+                      }}
+                      initial="hidden"
+                      animate={animationController}
+                      transition={{ duration, ease:'easeIn' }} 
+                      key={index} 
+                      className='shadow-md shadow-pink-600 hover:scale-105 hover:shadow-[#8892b0] duration-500 py-2 rounded-lg'
+                      >
+                        <img src={tech.src} alt='insertImage' className={'w-12 mx-auto' + ' ' + tech.style}/>
+                        <p className='mt-2'>{tech.name}</p>
+                      </motion.div>
+                    );
+                })
                 :
-                technologies.map(tech => (
-                  <div key={tech.id} className='shadow-md shadow-pink-600 hover:scale-105 hover:shadow-[#8892b0] duration-500 py-2 rounded-lg'>
-                    <img src={tech.src} alt='insertImage'  className={'w-12 mx-auto' + ' ' + tech.style}/>
-                    <p className='mt-2'>{tech.name}</p>
-                  </div>
-                ))
+                technologies.map((tech, index) => {
+                  const duration = 0.5 + (index + 1) * 0.1;
+                  return(
+                    <motion.div
+                    variants={{
+                      hidden: { opacity: 0, x: -35},
+                      visible: { opacity: 1, x: 0 }
+                    }}
+                    initial="hidden"
+                    animate={animationController}
+                    transition={{ duration, ease:'easeIn' }} 
+                    key={index} 
+                    className='shadow-md shadow-pink-600 hover:scale-105 hover:shadow-[#8892b0] duration-500 py-2 rounded-lg'>
+                      <img src={tech.src} alt='insertImage' className={'w-12 mx-auto' + ' ' + tech.style}/>
+                      <p className='mt-2'>{tech.name}</p>
+                  </motion.div>
+                  );
+                })
             }
           </div>
-        </div>
+        </motion.div>
       </div>
     </div>
   )

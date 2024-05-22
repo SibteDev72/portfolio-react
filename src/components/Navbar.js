@@ -4,11 +4,13 @@ import { FaBars } from "react-icons/fa6";
 import { FaLinkedin, FaGithubSquare } from "react-icons/fa";
 import { IoMdClose, IoMdMail } from "react-icons/io";
 import { BsFillPersonLinesFill } from "react-icons/bs";
+import { motion, useAnimation } from 'framer-motion';
 
 function Navbar() {
     
     const[nav, setNav] = useState(false);
     const[activeNavSlide, setActiveNavSlide] = useState('home');
+    const mainControls = useAnimation();
 
     useEffect(() => {
 
@@ -39,6 +41,14 @@ function Navbar() {
         // return() => window.removeEventListener('scroll', handleScroll);
 
     },[])
+
+    useEffect(() => {
+        if(nav === true){
+            mainControls.start("visible")
+        }else{
+            mainControls.start("hidden")
+        }
+    }, [!nav])
 
     const socialMediaLinks = [
         {
@@ -76,6 +86,29 @@ function Navbar() {
         }
     ]
 
+    const menuLinks = [
+        {
+            id:1,
+            title: 'home'
+        },
+        {
+            id:2,
+            title: 'about'
+        },
+        {
+            id:3,
+            title: 'technologies'
+        },
+        {
+            id:4,
+            title: 'projects'
+        },
+        {
+            id:5,
+            title: 'contact'
+        }
+    ]
+
   return (
     <div className='fixed w-full h-[90px] flex justify-between items-center px-4 bg-[#0a192f] text-gray-300 shadow-md shadow-pink-600'>
         <div className='flex justify-between items-center w-[200px]'>
@@ -85,35 +118,19 @@ function Navbar() {
         </div>   
         { /* Menu */ }
         <ul className='hidden md:flex'>
-            <li>
-                <Link 
-                className={activeNavSlide === 'home' ? 'inline border-b-4 border-pink-600 pb-1':''} 
-                to="home" smooth={true} duration={500}>
-                Home
-                </Link>
-            </li>
-            <li>
-                <Link
-                className={activeNavSlide === 'about' ? 'inline border-b-4 border-pink-600 pb-1':''} 
-                to="about" smooth={true} duration={500}>
-                About
-                </Link>
-            </li>
-            <li>
-                <Link
-                className={activeNavSlide === 'technologies' ? 'inline border-b-4 border-pink-600 pb-1':''} 
-                to="technologies" smooth={true} duration={500}>Technologies</Link>
-            </li>
-            <li>
-                <Link
-                className={activeNavSlide === 'projects' ? 'inline border-b-4 border-pink-600 pb-1':''} 
-                to="projects" smooth={true} duration={500}>Projects</Link>
-            </li>
-            <li>
-                <Link
-                className={activeNavSlide === 'contact' ? 'inline border-b-4 border-pink-600 pb-1':''}  
-                to="contact" smooth={true} duration={500}>Contact</Link>
-            </li>
+            {
+                menuLinks.map( link => {
+                    return(
+                        <li className='capitalize' key={link.id}>
+                            <Link 
+                            className={activeNavSlide === link.title ? 'inline border-b-4 border-pink-600 pb-1':''} 
+                            to = {link.title} smooth={true} duration={500}>
+                            { link.title }
+                            </Link>
+                        </li>
+                    );
+                })
+            }
         </ul>  
         { /*  Hameburger */ }
         <div onClick={() => setNav(!nav)} className='md:hidden z-10'>
@@ -122,31 +139,26 @@ function Navbar() {
         { /* Mobile Menu */ }
         <div className={!nav ? 'hidden' : 'absolute top-0 left-0 h-screen w-full bg-[#0a192f] flex flex-col items-center justify-center'}>
             <ul>
-                <li className='py-6 text-4xl'>
-                    <Link onClick={() => setNav(!nav)} to="home" smooth={true} duration={500}>
-                    Home
-                    </Link>
-                </li>
-                <li className='py-6 text-4xl'>
-                    <Link onClick={() => setNav(!nav)} to="about" smooth={true} duration={500}>
-                    About
-                    </Link>
-                </li>
-                <li className='py-6 text-4xl'>
-                    <Link onClick={() => setNav(!nav)} to="technologies" smooth={true} duration={500}>
-                    Technologies
-                    </Link>
-                </li>
-                <li className='py-6 text-4xl'>
-                    <Link onClick={() => setNav(!nav)} to="projects" smooth={true} duration={500}>
-                    Projects
-                    </Link>
-                </li>
-                <li className='py-6 text-4xl'>
-                    <Link onClick={() => setNav(!nav)} to="contact" smooth={true} duration={500}>
-                    Contact
-                    </Link>
-                </li>
+                {
+                    menuLinks.map( (link) => { 
+                        const duration = 0.5 + link.id * 0.1;
+                        return(
+                            <motion.li
+                            variants={{
+                                hidden: { opacity: 0, y: 75},
+                                visible: { opacity: 1, y: 0 },
+                            }}
+                            animate={mainControls}
+                            transition={{ duration, delay:0.5, ease:'easeIn' }}
+                            className='py-6 text-4xl capitalize' 
+                            key={link.id}>
+                                <Link onClick={() => setNav(!nav)} to={link.title} smooth={true} duration={500}>
+                                { link.title }
+                                </Link>
+                            </motion.li>
+                        );
+                    })
+                }
             </ul>  
         </div>
         {/* Aside Social Media */}
