@@ -48,7 +48,8 @@ function DemoModel() {
         animate={animationController}
         transition={{ duration: 0.2, ease:'easeIn' }}
         className='flex flex-col justify-center items-center sm:max-w-[1200px] w-full h-[35rem]'>
-          <h1 className='text-2xl font-bold inline border-b-4 border-pink-600 sm:text-3xl sm:pt-[-6rem]'>Demo Video</h1>
+          <h1 className='text-2xl mb-[2rem] font-bold inline border-b-4 border-pink-600 sm:text-3xl sm:pt-[-6rem]'>
+          { object.project.thumbnaiText === 'Chatbot' ? 'Demo Link' : 'Demo Video'}</h1>
           <motion.div
           variants={{
             hidden: { opacity: 0, y: -30},
@@ -60,12 +61,19 @@ function DemoModel() {
           >
           { object.project.thumbnaiText === 'Netflix Clone' ? 
             <video
-            className='w-[18rem] mt-4 sm:w-[50rem] sm:mt-4 sm:rounded-md sm:shadow-md sm:shadow-pink-600' 
+            className='w-[18rem] sm:w-[50rem] sm:rounded-md sm:shadow-md sm:shadow-pink-600' 
             src = {NetflixCloneDemo} controls autoPlay muted loop />
-            :
+            : object.project.thumbnaiText === 'BinYousaf Clone' ?
             <video
-            className='w-[18rem] mt-4 sm:w-[50rem] sm:mt-4 sm:rounded-md sm:shadow-md sm:shadow-pink-600' 
+            className='w-[18rem] sm:w-[50rem] sm:rounded-md sm:shadow-md sm:shadow-pink-600' 
             src = {BinYousafDemo} controls autoPlay muted loop />
+            : 
+            <a 
+            className='text-gray-300 border-2 border-pink-600 cursor-pointer py-3 px-7 rounded-full hover:bg-pink-600 duration-300'
+            href="https://sibtedev72.github.io/Chatbot-React/"  
+            target="_blank">
+              Open Chatbot
+            </a>
           }
           </motion.div>
         </motion.div>

@@ -3,7 +3,7 @@ import React from 'react'
 function Contact() {
   return (
     <div id='contact' className='w-full h-screen text-[#ccd6f6] bg-[#0a192f]'>
-        <div className='max-w-[1000px] mx-auto pt-[4rem] flex flex-col justify-center w-full h-full'>
+        <div className='max-w-[1000px] mx-auto sm:pt-[5rem] flex flex-col justify-center w-full h-full'>
             <div className='text-left ml-2'>
                 <p className='text-4xl font-bold inline border-b-4 border-pink-600 sm:text-2xl'>Contact</p>
                 <p className='pt-4 text-md sm:text-lg'>// Fill this form to get in touch with me or reach me out on my email - sibte.dev72@gmail.com.</p>

@@ -153,7 +153,7 @@ function DetailModel() {
             { object.project.thumbnaiText === 'Netflix Clone' ? 
                 technologies.filter(
                     fil => fil.id !== 5 && fil.id !== 8 && fil.id !== 9 && fil.id !== 10
-                    && fil.id !== 11 && fil.id !== 12).map((tech, index) => {
+                    && fil.id !== 11 && fil.id !== 12 && fil.id !== 13).map((tech, index) => {
                     const duration = 0.5 + (index + 1) * 0.1;
                     return(
                       <motion.div
@@ -172,8 +172,8 @@ function DetailModel() {
                       </motion.div>
                     );
                 })
-                : object.project.thumbnaiText === 'BinYousaf' ?
-                technologies.map((tech, index) => {
+                : object.project.thumbnaiText === 'BinYousaf Clone' ?
+                technologies.filter(fil => fil.id !== 13).map((tech, index) => {
                   const duration = 0.5 + (index + 1) * 0.1;
                   return(
                     <motion.div

@@ -2,9 +2,9 @@ import React from 'react'
 
 function About() {
   return (
-    <div id="about" className='w-full h-screen text-[#ccd6f6] bg-[#0a192f]'>
+    <div id="about" className='w-full h-screen flex justify-center items-center  text-[#ccd6f6] bg-[#0a192f]'>
         {/* Content */}
-        <div className='flex flex-col pt-14 justify-center items-center w-full h-full'>
+        <div className='flex flex-col justify-center items-center w-full h-full sm:pt-4'>
             <div className='max-w-[1000px] w-full grid grid-cols-2 gap-8'>
                 <div className='sm:text-right pb-8 pl-4'>
                     <p className='text-4xl font-bold inline border-b-4 border-pink-600'>About</p>
