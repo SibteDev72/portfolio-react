@@ -11,6 +11,7 @@ import SASS from '../assets/sass.png';
 import Exp from '../assets/express.png';
 import Node from '../assets/node.png';
 import MDB from '../assets/mongo.png';
+import zustand from "../assets/zustand.png";
 import { useStore } from '../Store/functions-store';
 import { motion, useAnimation } from 'framer-motion';
 
@@ -103,6 +104,11 @@ function DetailModel() {
       src: MDB,
       name: 'MongoDB',
     },
+    {
+      id:13,
+      src: zustand,
+      name: 'Zustand',
+    }
   ]
 
   return (
@@ -166,8 +172,29 @@ function DetailModel() {
                       </motion.div>
                     );
                 })
-                :
+                : object.project.thumbnaiText === 'BinYousaf' ?
                 technologies.map((tech, index) => {
+                  const duration = 0.5 + (index + 1) * 0.1;
+                  return(
+                    <motion.div
+                    variants={{
+                      hidden: { opacity: 0, x: -35},
+                      visible: { opacity: 1, x: 0 }
+                    }}
+                    initial="hidden"
+                    animate={animationController}
+                    transition={{ duration, ease:'easeIn' }} 
+                    key={index} 
+                    className='shadow-md shadow-pink-600 hover:scale-105 hover:shadow-[#8892b0] duration-500 py-2 rounded-lg'>
+                      <img src={tech.src} alt='insertImage' className={'w-12 mx-auto' + ' ' + tech.style}/>
+                      <p className='mt-2'>{tech.name}</p>
+                  </motion.div>
+                  );
+                })
+                :
+                technologies.filter(
+                  fil => fil.id !== 5 && fil.id !== 6 && fil.id !== 7 && fil.id !== 9 && fil.id !== 10
+                  && fil.id !== 11 && fil.id !== 12).map((tech, index) => {
                   const duration = 0.5 + (index + 1) * 0.1;
                   return(
                     <motion.div

@@ -21,6 +21,17 @@
         "Implement Authentication in order to secure the data receives from server."
       ],
       "Imgsrc": "assets/binYousaf.png"
+    },
+    {
+      "id":3,
+      "thumbnaiText": "Chatbot",
+      "features": [
+        "Complete Chatbot Integerated by API provided by the Verticalsols.",
+        "State Management achieved by zustand library.",
+        "Implementing tailwind css for responive user interface.",
+        "Typewriter animation for bot response"
+      ],
+      "Imgsrc": "assets/chat-bot.png"
     }
 ]
   

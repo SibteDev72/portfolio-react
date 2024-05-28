@@ -7,6 +7,9 @@ import RL from '../assets/react.png';
 import Node from '../assets/node.png';
 import MDb from '../assets/mongo.png';
 import Git from '../assets/github.png';
+import zustand from '../assets/zustand.png';
+import framer from "../assets/framer-motion.png";
+
 import { motion, useAnimation, useInView } from 'framer-motion';
 
 function Technologies() {
@@ -47,21 +50,31 @@ function Technologies() {
     },
     {
       id:5,
+      src: framer,
+      name: 'Framer Motion'
+    },
+    {
+      id:6,
       src: RL,
       name: 'React JS'
     },
     {
-      id:6,
+      id:7,
+      src: zustand,
+      name: 'Zustand'
+    },
+    {
+      id:8,
       src: Node,
       name: 'Node JS'
     },
     {
-      id:7,
+      id:9,
       src: MDb,
       name: 'Mongo DB'
     },
     {
-      id:8,
+      id:10,
       src: Git,
       name: 'GitHub'
     }
@@ -75,7 +88,7 @@ function Technologies() {
                 <p className='text-2xl sm:text-4xl font-bold inline border-b-4 border-pink-600'>Technologies</p>
                 <p className='pt-4'>// These are the technologies that I have worked with.</p>
             </div>
-            <div ref={ref} className='w-full grid grid-cols-2 sm:grid-cols-4 gap-8 text-center py-8 px-2'>
+            <div ref={ref} className='w-full grid grid-cols-2 sm:grid-cols-5 gap-8 text-center py-8 px-2'>
               {
                 technologies.map(tech => {
                   const duration = 0.5 + tech.id * 0.1;
@@ -90,7 +103,7 @@ function Technologies() {
                     transition={{ duration, delay:0.2, ease:'easeIn' }}
                     key={tech.id} 
                     className='shadow-md shadow-pink-600 hover:scale-105 hover:shadow-[#8892b0] duration-500 py-2 rounded-lg'>
-                      <img src={tech.src} className='w-20 mx-auto' />
+                      <img src={tech.src} className='w-[4rem] mx-auto' />
                       <p className='mt-2'>{tech.name}</p>
                   </motion.div>
                   );
