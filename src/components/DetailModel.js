@@ -172,8 +172,8 @@ function DetailModel() {
                       </motion.div>
                     );
                 })
-                : object.project.thumbnaiText === 'BinYousaf Clone' ?
-                technologies.filter(fil => fil.id !== 13).map((tech, index) => {
+                : object.project.thumbnaiText === 'E-Commerce' ?
+                technologies.map((tech, index) => {
                   const duration = 0.5 + (index + 1) * 0.1;
                   return(
                     <motion.div

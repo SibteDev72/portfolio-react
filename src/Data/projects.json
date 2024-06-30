@@ -4,21 +4,25 @@
       "thumbnaiText": "Netflix Clone",
       "features": [
         "Fully Functioning Feature Page.",
-        "Multi ReactJS Components.",
-        "Customizable Sliders."
+        "Custom Animations through keyframes.",
+        "Multi ReactJS Components according to different categories of content.",
+        "Implementation of custom sliders of each category.",
+        "Develop a separate ReactJS component and slider for trending movies.",
+        "Application of props to manage the data across different ReactJS Components."
       ],
       "Imgsrc": "assets/netflix.png"
     },
     {
       "id":2,
-      "thumbnaiText": "BinYousaf Clone",
+      "thumbnaiText": "E-Commerce",
       "features": [
-        "Complete E-Commerce Website with all Functionalities.",
         "Products controlled through an Admin Panel Dashboard.",
-        "Development of Restful Api’s and Integration with of front end and back end.",
-        "Graphical Representation of Weekly Sales in Admin Dashboard.",
-        "Implementing SASS the projects with highly responsive UI.",
-        "Implement Authentication in order to secure the data receives from server."
+        "Development of Restful API’s and Integration with of front end and back end through axios.",
+        "State Management to handle cart, wishlist and weekly sales stores.",
+        "React Charts to represent states according to weekly sales.",
+        "Implementing SASS the projects with highly responsive user interface.",
+        "Generate a token at the time of login through JSON Web Token.",
+        "Implementation of Bcrypt as middleware to insure authentication of user and secure the data receives from server."
       ],
       "Imgsrc": "assets/binYousaf.png"
     },

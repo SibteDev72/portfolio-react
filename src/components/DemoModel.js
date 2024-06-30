@@ -1,7 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import { IoMdClose } from "react-icons/io";
 import NetflixCloneDemo from '../assets/NetflixCloneDemo.mp4';
-import BinYousafDemo from '../assets/BinYousafDemo.mp4';
 import { useStore } from '../Store/functions-store';
 import { motion, useAnimation } from 'framer-motion';
 
@@ -49,7 +48,8 @@ function DemoModel() {
         transition={{ duration: 0.2, ease:'easeIn' }}
         className='flex flex-col justify-center items-center sm:max-w-[1200px] w-full h-[35rem]'>
           <h1 className='text-2xl mb-[2rem] font-bold inline border-b-4 border-pink-600 sm:text-3xl sm:pt-[-6rem]'>
-          { object.project.thumbnaiText === 'Chatbot' ? 'Demo Link' : 'Demo Video'}</h1>
+          { object.project.thumbnaiText === 'Chatbot' ? 'Demo Link' :
+          object.project.thumbnaiText === 'E-Commerce' ? 'Demo Link': 'Demo Video'}</h1>
           <motion.div
           variants={{
             hidden: { opacity: 0, y: -30},
@@ -63,10 +63,13 @@ function DemoModel() {
             <video
             className='w-[18rem] sm:w-[50rem] sm:rounded-md sm:shadow-md sm:shadow-pink-600' 
             src = {NetflixCloneDemo} controls autoPlay muted loop />
-            : object.project.thumbnaiText === 'BinYousaf Clone' ?
-            <video
-            className='w-[18rem] sm:w-[50rem] sm:rounded-md sm:shadow-md sm:shadow-pink-600' 
-            src = {BinYousafDemo} controls autoPlay muted loop />
+            : object.project.thumbnaiText === 'E-Commerce' ?
+            <a 
+            className='text-gray-300 border-2 border-pink-600 cursor-pointer py-3 px-7 rounded-full hover:bg-pink-600 duration-300'
+            href="https://ecommerce-9s85ircq0-syed-sibte-muhammads-projects.vercel.app/SignIn"  
+            target="_blank">
+              Open E-Commerce Project
+            </a>
             : 
             <a 
             className='text-gray-300 border-2 border-pink-600 cursor-pointer py-3 px-7 rounded-full hover:bg-pink-600 duration-300'
