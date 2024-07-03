@@ -15,7 +15,7 @@ function Home() {
           I'm a {' '}
           <span className='text-2xl sm:text-6xl font-bold text-[#8892b0]'>
             <Typewriter
-              words={['Full Stack Developer.']}
+              words={['Full Stack Developer.', 'Front End Developer.', 'React Developer.']}
               loop={true}
               cursor
               cursorStyle=''
@@ -27,10 +27,11 @@ function Home() {
         </h1>
         {/* <h2 className='text-3xl sm:text-6xl text-[#8892b0] font-bold'>I'm a Full Stack Developer.</h2> */}
         <p className='text-[#ccd6f6] max-w-[700px] py-4'>
-        Aspiring full stack MERN (MongoDB, Express.js, React.js, Node.js) developer with a passion for creating 
-        dynamic and interactive web applications. Proficient in utilizing the MERN stack to develop both front-end 
-        and back-end components of web applications. Eager to further enhance skills and contribute to innovative projects 
-        in the field of web development.
+        Aspiring full stack MERN (MongoDB, Express.js, React.js, Node.js) developer with a passion for 
+        creating dynamic and interactive web applications. Proficient in leveraging React.js to create
+        dynamic, high-performance interfaces with seamless user experiences. Skilled in RESTful APIs, 
+        and asynchronous data fetching. Passionate about learning new technologies and continuously 
+        improving code quality through best practices and modern development techniques.
         </p>
         <Link to="about" smooth={true} duration={500}>
           <button className='text-white group border-2 py-3 px-6 flex items-center my-2 hover:bg-pink-600 hover:border-pink-600 hover:rounded-sm'>
