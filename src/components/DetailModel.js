@@ -151,9 +151,7 @@ function DetailModel() {
           <h1 className='text-3xl font-bold inline border-b-4 mt-4 border-pink-600'>Technologies</h1>
           <div className='w-[18rem] sm:w-[70rem] grid grid-cols-1 sm:grid-cols-3 gap-4 text-center py-4 px-4'>
             { object.project.thumbnaiText === 'Netflix Clone' ? 
-                technologies.filter(
-                    fil => fil.id !== 5 && fil.id !== 8 && fil.id !== 9 && fil.id !== 10
-                    && fil.id !== 11 && fil.id !== 12 && fil.id !== 13).map((tech, index) => {
+                technologies.filter(fil.id !== 8).map((tech, index) => {
                     const duration = 0.5 + (index + 1) * 0.1;
                     return(
                       <motion.div
@@ -173,7 +171,9 @@ function DetailModel() {
                     );
                 })
                 : object.project.thumbnaiText === 'E-Commerce' ?
-                technologies.map((tech, index) => {
+                technologies.filter(
+                  fil => fil.id !== 5 && fil.id !== 6 && fil.id !== 7 && fil.id !== 9 && fil.id !== 10
+                  && fil.id !== 11 && fil.id !== 12).map((tech, index) => {
                   const duration = 0.5 + (index + 1) * 0.1;
                   return(
                     <motion.div
