@@ -15,10 +15,12 @@ function About() {
                     Hey. I am Sibte, nice to meet you. Please take a look arround.
                 </p>
                 <div>
-                    <p>Can develop and implement user interfaces using React.js. Design
-                        and develop backend services using Node.js, Express.js, and managing 
-                        data storage using MongoDB. Knowledge in JavaScript, HTML, CSS, Tailwind 
-                        and related front-end technologies. Write clean, efficient, and maintainable 
+                    <p>I'm a passionate Web Developer with a strong focus on Front-End development. Over the past months, 
+                        I've worked extensively with modern JavaScript frameworks such as React.js, Next.js, Vue.js, and Nuxt.js, 
+                        crafting responsive and user-friendly interfaces.In addition to my front-end expertise, I also have hands-on 
+                        experience with Node.js and MongoDB, enabling me to build and understand full-stack applications.
+                        I’ve also worked with headless CMS platforms like WordPress, integrating dynamic content with modern 
+                        frameworks for flexible and scalable web solutions. Write clean, efficient, and maintainable 
                         code following best practices and coding standards. Good understanding of code 
                         versioning tools, such as Git.
                     </p>
