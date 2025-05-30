@@ -8,6 +8,12 @@ import MDb from '../assets/mongo.png';
 import Git from '../assets/github.png';
 import zustand from '../assets/zustand.png';
 import framer from "../assets/framer-motion.png";
+import typescript from "../assets/typescript.png";
+import gsap from "../assets/gsap.png"
+import vuejs from "../assets/vuejs.png"
+import nextjs from "../assets/nextjs.png"
+import nuxtjs from "../assets/nuxtjs.png"
+
 
 export const technologies = [
     {
@@ -27,36 +33,61 @@ export const technologies = [
     },
     {
       id:4,
+      src: typescript,
+      name: 'TypeScript'
+    },
+    {
+      id:5,
       src: TW,
       name: 'Tailwind'
     },
     {
-      id:5,
+      id:6,
+      src: gsap,
+      name: 'GSAP'
+    },
+    {
+      id:7,
       src: framer,
       name: 'Framer Motion'
     },
     {
-      id:6,
+      id:8,
+      src: vuejs,
+      name: 'Vue JS'
+    },
+    {
+      id:9,
+      src: nuxtjs,
+      name: 'Nuxt JS'
+    },
+    {
+      id:10,
       src: RL,
       name: 'React JS'
     },
     {
-      id:7,
+      id:11,
+      src: nextjs,
+      name: 'Next JS'
+    },
+    {
+      id:12,
       src: zustand,
       name: 'Zustand'
     },
     {
-      id:8,
+      id:13,
       src: Node,
       name: 'Node JS'
     },
     {
-      id:9,
+      id:14,
       src: MDb,
       name: 'Mongo DB'
     },
     {
-      id:10,
+      id:15,
       src: Git,
       name: 'GitHub'
     }
